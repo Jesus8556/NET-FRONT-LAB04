@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Search</title>
+    <!-- Agregar los enlaces a Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">GIF Search</h1>
+        <form action="/search" method="GET">
+            <div class="mb-3">
+                <label for="number" class="form-label">Enter a number between 1 and 8:</label>
+                <input type="number" class="form-control" id="number" name="number" min="1" max="8" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <% if (gifUrl) { %>
+        <div class="mt-5">
+            <h2>GIF Result</h2>
+            <img src="<%= gifUrl %>" class="img-fluid" alt="GIF">
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>
